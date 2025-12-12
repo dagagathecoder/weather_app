@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-cloud-sun"></i> Simple Weather</h1>
+            <p class="subtitle">Enter a city to get current weather</p>
+        </header>
+
+        <div class="search-box">
+            <input type="text" id="city-input" placeholder="Enter city (e.g., London, Tokyo, New York)">
+            <button id="search-btn">
+                <i class="fas fa-search"></i> Get Weather
+            </button>
+            <button id="location-btn">
+                <i class="fas fa-location-arrow"></i> Use My Location
+            </button>
+        </div>
+
+        <div class="weather-container">
+            <div class="weather-card" id="weather-card">
+                <div class="loading" id="loading">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <p>Loading weather...</p>
+                </div>
+
+                <div class="weather-content hidden" id="weather-content">
+                    <div class="location">
+                        <h2 id="city-name">--</h2>
+                        <p id="date-time">--</p>
+                    </div>
+
+                    <div class="main-weather">
+                        <div class="temperature">
+                            <span id="temp">--</span>
+                            <span class="unit" id="unit">°C</span>
+                        </div>
+                        <div class="weather-icon">
+                            <img id="weather-icon" src="" alt="Weather icon">
+                            <p id="weather-desc">--</p>
+                        </div>
+                    </div>
+
+                    <div class="weather-details">
+                        <div class="detail">
+                            <i class="fas fa-temperature-high"></i>
+                            <div>
+                                <span>Feels Like</span>
+                                <span id="feels-like">--</span>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-tint"></i>
+                            <div>
+                                <span>Humidity</span>
+                                <span id="humidity">--</span>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-wind"></i>
+                            <div>
+                                <span>Wind</span>
+                                <span id="wind">--</span>
+                            </div>
+                        </div>
+                        <div class="detail">
+                            <i class="fas fa-cloud"></i>
+                            <div>
+                                <span>Conditions</span>
+                                <span id="conditions">--</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="error hidden" id="error">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p id="error-msg">City not found. Please try again.</p>
+                </div>
+            </div>
+        </div>
+
+        
+        <footer>
+            <p>Weather data from <a href="https://openweathermap.org/" target="_blank">OpenWeatherMap</a> and made by Dagaga A.</p>
+            <p class="tip">Click temperature to switch between °C and °F</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
